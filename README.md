@@ -44,13 +44,33 @@ Binary search trees are fast for insertion, deletion and accessing elements
 ```
 
 Next we'll make another class. This will run various searches
-against the tree.
+against the tree.  Notice that it too is a constructor though. 
+It'll take in a number we'll call the root and keep count of
+the nodes.
 
 ```
 class BinarySearchTree {
     constructor(value){
         this.root = new Node(value);
         this.count = 1;
+    }
+}
+
+```
+Inside of this class we will run our first method.  This will be to 
+insert numbers to the tree.  We'll call this ```insertNumber```
+```
+class BinarySearchTree {
+    constructor(value){
+        this.root = new Node(value);
+        this.count = 1;
+    }
+
+    insertNumber(value){
+        let newNode = new Node(value);
+        this.count++;
+
+        
     }
 }
 
