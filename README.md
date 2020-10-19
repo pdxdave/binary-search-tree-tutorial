@@ -1,7 +1,7 @@
 # binary-search-tree-tutorial
 A tutorial for working with binary trees using Javascript
 
-[I'm an inline-style link with title](https://repl.it/@webdevdave/pdxdavebinarysearchtree#main.js "Repl example")
+[Repl example](https://repl.it/@webdevdave/pdxdavebinarysearchtree#main.js "Repl example")
 
 Binary search trees are fast for insertion, deletion and accessing elements
 ```
