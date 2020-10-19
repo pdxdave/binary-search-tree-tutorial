@@ -98,10 +98,13 @@ class Node {
 }
 
 ```
+
 Now we'll create a function inside of the ```insertNumber``` method and
 it will run through the tree to determine where the number should be placed.
 We'll call this ```treeSearch```.  It'll take in the value and compare it to
 values in the tree.
+
+```
 class Node {
      constructor(value){
          this.value = value;
