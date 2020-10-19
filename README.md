@@ -1,6 +1,7 @@
 # binary-search-tree-tutorial
 A tutorial for working with binary trees using Javascript
 
+[I'm an inline-style link with title](https://repl.it/@webdevdave/pdxdavebinarysearchtree#main.js "Repl example")
 
 Binary search trees are fast for insertion, deletion and accessing elements
 ```
@@ -126,16 +127,16 @@ class Node {
         const treeSearch = node => {
             if(value < node.value){
                 if(!node.left){
-                node.left = newNode;
+                    node.left = newNode;
                 } else {
-                searchTree(node.left);
+                    searchTree(node.left);
                 } 
             }
             else if (value > node.value){
                 if(!node.right){
-                node.right = newNode;
+                    node.right = newNode;
                 } else {
-                searchTree(node.right);
+                    searchTree(node.right);
                 }
             }
         } // end of treeSearch
@@ -143,4 +144,9 @@ class Node {
     } // end of insertNumber
 } // end of BinearySearchTree
 
+const test = new BinarySearchTree(10);
+test.insertNumber(5);
+test.insertNumber(11)
+
+test
 ```
