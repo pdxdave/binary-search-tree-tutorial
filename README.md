@@ -106,7 +106,7 @@ Now we'll create a function inside of the ```insertNumber``` method and
 it will run through the tree to determine where the number should be placed.
 We'll call this ```treeSearch```.  It'll take in the value and compare it to
 values in the tree. The process is actually pretty simple.  First it will check
-to see if the new incoming value is greate or less than the root node.  If less,
+to see if the new incoming value is greater or less than the root node.  If less,
 we proceed left.  If greater, we proceed right. If there is no number to the right
 or left of the root node, we'll place the new income number.  If there is a number,
 we will use recursion to keep drilling down to the right or left side of the tree
