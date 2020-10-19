@@ -19,7 +19,7 @@ Binary search trees are fast for insertion, deletion and accessing elements
  branches to the right after the number 3.  
  
 
- ADD A NUMBER
+ ### INSERT A NUMBER TO THE TREE
 
  To add a number to a tree we need to make a class that will create
  a node to hold a number.  Call it a node, a card, a domino, whatever. 
@@ -44,7 +44,7 @@ Binary search trees are fast for insertion, deletion and accessing elements
 ```
 
 Next we'll make another class. This will run various searches
-against the tree.  Notice that it too is a constructor though. 
+against the tree.  Notice that it too has a constructor. 
 It'll take in a number we'll call the root and keep count of
 the nodes.
 
@@ -58,7 +58,10 @@ class BinarySearchTree {
 
 ```
 Inside of this class we will run our first method.  This will be to 
-insert numbers to the tree.  We'll call this ```insertNumber```
+insert numbers to the tree.  We'll call this ```insertNumber```.
+When ```insertNumber``` is called it will take the passed value,
+pop up to the class Node and create a new card with the value, and
+then proceed through the rest of the method.
 ```
 class BinarySearchTree {
     constructor(value){
@@ -69,9 +72,72 @@ class BinarySearchTree {
     insertNumber(value){
         let newNode = new Node(value);
         this.count++;
-
-        
     }
 }
+```
+So this is what we have so far...
+```
+class Node {
+     constructor(value){
+         this.value = value;
+         this.left = null;
+         this.right = null;
+     }
+ }
+
+ class BinarySearchTree {
+    constructor(value){
+        this.root = new Node(value);
+        this.count = 1;
+    }
+
+    insertNumber(value){
+        let newNode = new Node(value);
+        this.count++;
+    }
+}
+
+```
+Now we'll create a function inside of the ```insertNumber``` method and
+it will run through the tree to determine where the number should be placed.
+We'll call this ```treeSearch```.  It'll take in the value and compare it to
+values in the tree.
+class Node {
+     constructor(value){
+         this.value = value;
+         this.left = null;
+         this.right = null;
+     }
+ }
+
+ class BinarySearchTree {
+    constructor(value){
+        this.root = new Node(value);
+        this.count = 1;
+    }
+
+    insertNumber(value){
+        let newNode = new Node(value);
+        this.count++;
+
+        const treeSearch = node => {
+            if(value < node.value){
+                if(!node.left){
+                node.left = newNode;
+                } else {
+                searchTree(node.left);
+                } 
+            }
+            else if (value > node.value){
+                if(!node.right){
+                node.right = newNode;
+                } else {
+                searchTree(node.right);
+                }
+            }
+        } // end of treeSearch
+      treeSearch(this.root)
+    } // end of insertNumber
+} // end of BinearySearchTree
 
 ```
