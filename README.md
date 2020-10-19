@@ -28,14 +28,14 @@ Binary search trees are fast for insertion, deletion and accessing elements
  a node to hold a number.  Call it a node, a card, a domino, whatever. 
  It holds a new incoming number.  I think of it as a card (e.g., 2x3 note card).
  This card will take in the new number and will make both the left and right
- sides branches null.  There's nothing there.  So if the number is 5, it'll look
+ sides branches null. So if the number is 5, it'll look
  like this.
 
  ```
     5
    / \
  ```
-
+Our class Node
  ```
  class Node {
      constructor(value){
@@ -46,9 +46,9 @@ Binary search trees are fast for insertion, deletion and accessing elements
  }
 ```
 
-Next we'll make another class. This will run various searches
-against the tree.  Notice that it too has a constructor. 
-It'll take in a number we'll call the root and keep count of
+Next we'll make another class called ```BinarySearchTree```. This will run 
+various searches against the tree.  Notice that it too has a constructor. 
+It'll take in a value we will call the root, and keep count of
 the nodes.
 
 ```
@@ -60,8 +60,8 @@ class BinarySearchTree {
 }
 
 ```
-Inside of this class we will run our first method.  This will be to 
-insert numbers to the tree.  We'll call this ```insertNumber```.
+Inside of this class we will run our first method.  This will
+insert numbers into the tree.  We'll call this ```insertNumber```.
 When ```insertNumber``` is called it will take the passed value,
 pop up to the class Node and create a new card with the value, and
 then proceed through the rest of the method.
@@ -105,7 +105,12 @@ class Node {
 Now we'll create a function inside of the ```insertNumber``` method and
 it will run through the tree to determine where the number should be placed.
 We'll call this ```treeSearch```.  It'll take in the value and compare it to
-values in the tree.
+values in the tree. The process is actually pretty simple.  First it will check
+to see if the new incoming value is greate or less than the root node.  If less,
+we proceed left.  If greater, we proceed right. If there is no number to the right
+or left of the root node, we'll place the new income number.  If there is a number,
+we will use recursion to keep drilling down to the right or left side of the tree
+until the right place is located to place the number.
 
 ```
 class Node {
